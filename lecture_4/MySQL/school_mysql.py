@@ -1,4 +1,5 @@
 import mysql.connector
+import os
 
 config = {
   'user': 'root',
