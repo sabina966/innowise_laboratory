@@ -1,8 +1,9 @@
 import mysql.connector
+import os
 
 config = {
   'user': 'root',
-  'password': 'root',
+  'password': os.getenv('DB_PASSWORD'),
   'host': 'localhost:3306',
   'database': 'inventory',
   'raise_on_warnings': True,
