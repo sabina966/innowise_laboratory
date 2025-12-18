@@ -13,10 +13,10 @@ COPY pyproject.toml poetry.lock* ./
 RUN poetry install --without dev --no-interaction --no-root
 
 # капіруем код
-COPY main_3.py .
+COPY main_6.py .
 
 # адкрываем порт
 EXPOSE 8039
 
 # запускаем
-CMD ["poetry", "run", "uvicorn", "main_3:app", "--host", "0.0.0.0", "--port", "8039"]
+CMD ["poetry", "run", "uvicorn", "main_6:app", "--host", "0.0.0.0", "--port", "8039"]
