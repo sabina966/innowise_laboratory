@@ -1,5 +1,9 @@
 FROM python:3.14-slim
 
+# усталёўваем сістэмные залежнасці 
+# каб можна было праверыць працу сервера праз тэрміналь кантэйнера
+RUN apt-get update && apt-get install -y curl
+
 # усталёўваем poetry
 RUN pip install poetry
 
@@ -10,7 +14,7 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock* ./
 
 # усталёўваем гэтыя залежнасці без стварэння віртуальнага асяроддзя
-RUN poetry install --without dev --no-interaction --no-root
+RUN poetry install --no-interaction --no-root
 
 # капіруем код
 COPY main_6.py .
